@@ -1,0 +1,23 @@
+/* Small bridge between VitePress's own CSS-variable theme and the shadcn-vue
+   design tokens, so the default VitePress chrome (links, buttons in content)
+   keeps visually matching the shadcn-styled parts (nav mode toggle, home
+   hero, article cards) in both light and dark mode. */
+:root {
+  --vp-c-brand-1: oklch(0.205 0 0);
+  --vp-c-brand-2: oklch(0.35 0 0);
+  --vp-c-brand-3: oklch(0.145 0 0);
+}
+
+.dark {
+  --vp-c-brand-1: oklch(0.87 0 0);
+  --vp-c-brand-2: oklch(0.75 0 0);
+  --vp-c-brand-3: oklch(0.985 0 0);
+}
+
+/* The shadcn-vue ModeToggle (injected into `nav-bar-content-after`) replaces
+   VitePress's built-in appearance switch — hide the original to avoid two
+   controls for the same setting. */
+.VPSwitchAppearance {
+  display: none !important;
+}
+

@@ -1,0 +1,140 @@
+import { fileURLToPath, URL } from "node:url"
+import { defineConfig } from "vitepress"
+
+const cliSidebarEn = [
+  {
+    text: "CLI (asc-daemon)",
+    items: [
+      { text: "Overview", link: "/cli/" },
+      { text: "API: gRPC + REST", link: "/cli/api" },
+      { text: "Application management", link: "/cli/app-management" },
+      { text: "Package manager", link: "/cli/package-manager" },
+      { text: "MCP server", link: "/cli/mcp-server" },
+      { text: "Monitoring", link: "/cli/monitoring" },
+      { text: "Backups", link: "/cli/backups" },
+      { text: "SFTP", link: "/cli/sftp" },
+      { text: "Console", link: "/cli/console" },
+      { text: "Scheduler", link: "/cli/scheduler" },
+      { text: "Updater", link: "/cli/updater" },
+    ],
+  },
+]
+
+const cliSidebarRu = [
+  {
+    text: "CLI (asc-daemon)",
+    items: [
+      { text: "Обзор", link: "/ru/cli/" },
+      { text: "API: gRPC + REST", link: "/ru/cli/api" },
+      { text: "Управление приложениями", link: "/ru/cli/app-management" },
+      { text: "Пакетный менеджер", link: "/ru/cli/package-manager" },
+      { text: "MCP-сервер", link: "/ru/cli/mcp-server" },
+      { text: "Мониторинг", link: "/ru/cli/monitoring" },
+      { text: "Бекапы", link: "/ru/cli/backups" },
+      { text: "SFTP", link: "/ru/cli/sftp" },
+      { text: "Консоль", link: "/ru/cli/console" },
+      { text: "Планировщик", link: "/ru/cli/scheduler" },
+      { text: "Обновления", link: "/ru/cli/updater" },
+    ],
+  },
+]
+
+export default defineConfig({
+  title: "AdminService.Cloud Docs",
+  description: "Documentation for the asc-daemon CLI and the AdminService.Cloud platform",
+  base: "/asc-documentaion/",
+  lang: "en-US",
+  appearance: true,
+  cleanUrls: true,
+
+  head: [["link", { rel: "icon", href: "/asc-documentaion/screenshots/preview.png" }]],
+
+  vite: {
+    resolve: {
+      alias: [
+        // "@" points at the project root (docs/.vitepress/../..), matching
+        // components.json / tsconfig.json so `@/lib/utils` and friends
+        // resolve the same way shadcn-vue's CLI would generate them.
+        { find: "@", replacement: fileURLToPath(new URL("../..", import.meta.url)) },
+      ],
+    },
+  },
+
+  themeConfig: {
+    logo: undefined,
+    socialLinks: [{ icon: "github", link: "https://github.com/AdminServiceCloud/asc-daemon" }],
+    search: {
+      provider: "local",
+      options: {
+        locales: {
+          ru: {
+            translations: {
+              button: { buttonText: "Поиск", buttonAriaLabel: "Поиск" },
+              modal: {
+                noResultsText: "Ничего не найдено",
+                resetButtonTitle: "Сбросить",
+                footer: { selectText: "выбрать", navigateText: "перейти" },
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  locales: {
+    root: {
+      label: "English",
+      lang: "en-US",
+      themeConfig: {
+        nav: [
+          { text: "CLI", link: "/cli/" },
+          { text: "Platform", link: "/platform/" },
+        ],
+        sidebar: {
+          "/cli/": cliSidebarEn,
+          "/platform/": [{ text: "Platform", items: [{ text: "Overview", link: "/platform/" }] }],
+        },
+        editLink: {
+          pattern: "https://github.com/AdminServiceCloud/asc-documentaion/edit/main/docs/:path",
+          text: "Edit this page on GitHub",
+        },
+        footer: {
+          message: "Released under the MIT License.",
+          copyright: "Copyright © AdminService.Cloud",
+        },
+      },
+    },
+    ru: {
+      label: "Русский",
+      lang: "ru-RU",
+      link: "/ru/",
+      themeConfig: {
+        nav: [
+          { text: "CLI", link: "/ru/cli/" },
+          { text: "Платформа", link: "/ru/platform/" },
+        ],
+        sidebar: {
+          "/ru/cli/": cliSidebarRu,
+          "/ru/platform/": [
+            { text: "Платформа", items: [{ text: "Обзор", link: "/ru/platform/" }] },
+          ],
+        },
+        editLink: {
+          pattern: "https://github.com/AdminServiceCloud/asc-documentaion/edit/main/docs/:path",
+          text: "Редактировать на GitHub",
+        },
+        footer: {
+          message: "Распространяется по лицензии MIT.",
+          copyright: "Copyright © AdminService.Cloud",
+        },
+        outline: { label: "На этой странице" },
+        docFooter: { prev: "Предыдущая", next: "Следующая" },
+        lastUpdated: { text: "Обновлено" },
+        darkModeSwitchLabel: "Тема",
+        returnToTopLabel: "Наверх",
+        langMenuLabel: "Сменить язык",
+      },
+    },
+  },
+})

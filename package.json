@@ -1,0 +1,25 @@
+{
+  "name": "asc-documentaion",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "next",
+    "tailwindcss": "^4",
+    "@tailwindcss/postcss": "^4",
+    "postcss": "^8",
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "@vueuse/core": "^12",
+    "reka-ui": "^2",
+    "class-variance-authority": "^0.7",
+    "clsx": "^2",
+    "tailwind-merge": "^2",
+    "lucide-vue-next": "^0.475.0"
+  }
+}

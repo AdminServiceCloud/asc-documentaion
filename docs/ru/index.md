@@ -1,0 +1,42 @@
+---
+layout: home
+title: AdminService.Cloud Docs
+hero:
+  name: AdminService.Cloud
+  text: Документация
+  tagline: Open source CLI-демон для вашего сервера и платформа, построенная поверх него.
+  image:
+    src: /screenshots/preview.png
+    alt: asc-daemon preview
+  actions:
+    - theme: brand
+      text: Документация CLI
+      link: /ru/cli/
+    - theme: alt
+      text: Платформа (в разработке)
+      link: /ru/platform/
+    - theme: alt
+      text: GitHub
+      link: https://github.com/AdminServiceCloud/asc-daemon
+---
+
+<div class="mx-auto max-w-5xl px-6 pb-24 pt-4">
+  <h2 class="mb-6 text-xl font-semibold text-foreground">CLI (asc-daemon)</h2>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ArticleCard icon="📡" title="API: gRPC + REST" details="ConnectRPC, REST-транспорт, токены и аутентификация через unix-сокет." link="/ru/cli/api" />
+    <ArticleCard icon="📱" title="Управление приложениями" details="Docker и нативные приложения, команды жизненного цикла CLI." link="/ru/cli/app-management" />
+    <ArticleCard icon="📦" title="Пакетный менеджер" details="Манифесты asc.yaml, реестры, asc install." link="/ru/cli/package-manager" />
+    <ArticleCard icon="🤖" title="MCP-сервер" details="Model Context Protocol сервер для AI-агентов." link="/ru/cli/mcp-server" />
+    <ArticleCard icon="📊" title="Мониторинг" details="Мониторинг системы и приложений." link="/ru/cli/monitoring" />
+    <ArticleCard icon="💾" title="Бекапы" details="Создание, восстановление и ротация бекапов приложений." link="/ru/cli/backups" />
+    <ArticleCard icon="📁" title="SFTP" details="SFTP-сервер по приложению." link="/ru/cli/sftp" />
+    <ArticleCard icon="🖥️" title="Консоль" details="WebSocket- и SSH-консоли." link="/ru/cli/console" />
+    <ArticleCard icon="⏰" title="Планировщик" details="Планировщик повторяющихся задач." link="/ru/cli/scheduler" />
+    <ArticleCard icon="🔄" title="Обновления" details="asc-updater — автообновления, каналы, откат." link="/ru/cli/updater" />
+  </div>
+
+  <h2 class="mb-6 mt-14 text-xl font-semibold text-foreground">Платформа</h2>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ArticleCard icon="☁️" title="Обзор платформы" details="Документация в разработке." link="/ru/platform/" />
+  </div>
+</div>
