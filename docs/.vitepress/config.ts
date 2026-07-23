@@ -18,6 +18,30 @@ const cliSidebarEn = [
       { text: "Updater", link: "/cli/updater" },
     ],
   },
+  {
+    text: "Command reference",
+    items: [
+      { text: "Overview", link: "/commands/" },
+      { text: "serve", link: "/commands/serve" },
+      { text: "service", link: "/commands/service" },
+      { text: "status", link: "/commands/status" },
+      { text: "stats", link: "/commands/stats" },
+      { text: "app", link: "/commands/app" },
+      { text: "ls", link: "/commands/ls" },
+      { text: "ports", link: "/commands/ports" },
+      { text: "disk", link: "/commands/disk" },
+      { text: "install", link: "/commands/install" },
+      { text: "attach", link: "/commands/attach" },
+      { text: "upgrade", link: "/commands/upgrade" },
+      { text: "search", link: "/commands/search" },
+      { text: "update", link: "/commands/update" },
+      { text: "source", link: "/commands/source" },
+      { text: "auth", link: "/commands/auth" },
+      { text: "backup", link: "/commands/backup" },
+      { text: "config", link: "/commands/config" },
+      { text: "autoupdate", link: "/commands/autoupdate" },
+    ],
+  },
 ]
 
 const cliSidebarRu = [
@@ -35,6 +59,30 @@ const cliSidebarRu = [
       { text: "Консоль", link: "/ru/cli/console" },
       { text: "Планировщик", link: "/ru/cli/scheduler" },
       { text: "Обновления", link: "/ru/cli/updater" },
+    ],
+  },
+  {
+    text: "Справочник команд",
+    items: [
+      { text: "Обзор", link: "/ru/commands/" },
+      { text: "serve", link: "/ru/commands/serve" },
+      { text: "service", link: "/ru/commands/service" },
+      { text: "status", link: "/ru/commands/status" },
+      { text: "stats", link: "/ru/commands/stats" },
+      { text: "app", link: "/ru/commands/app" },
+      { text: "ls", link: "/ru/commands/ls" },
+      { text: "ports", link: "/ru/commands/ports" },
+      { text: "disk", link: "/ru/commands/disk" },
+      { text: "install", link: "/ru/commands/install" },
+      { text: "attach", link: "/ru/commands/attach" },
+      { text: "upgrade", link: "/ru/commands/upgrade" },
+      { text: "search", link: "/ru/commands/search" },
+      { text: "update", link: "/ru/commands/update" },
+      { text: "source", link: "/ru/commands/source" },
+      { text: "auth", link: "/ru/commands/auth" },
+      { text: "backup", link: "/ru/commands/backup" },
+      { text: "config", link: "/ru/commands/config" },
+      { text: "autoupdate", link: "/ru/commands/autoupdate" },
     ],
   },
 ]
@@ -93,6 +141,7 @@ export default defineConfig({
         ],
         sidebar: {
           "/cli/": cliSidebarEn,
+          "/commands/": cliSidebarEn,
           "/platform/": [{ text: "Platform", items: [{ text: "Overview", link: "/platform/" }] }],
         },
         editLink: {
@@ -116,6 +165,7 @@ export default defineConfig({
         ],
         sidebar: {
           "/ru/cli/": cliSidebarRu,
+          "/ru/commands/": cliSidebarRu,
           "/ru/platform/": [
             { text: "Платформа", items: [{ text: "Обзор", link: "/ru/platform/" }] },
           ],

@@ -23,6 +23,10 @@ Open source CLI utility and daemon written in Rust, installed on the user's serv
 | ⏰ Task scheduler | [scheduler](scheduler.md) |
 | 🔄 The asc-updater update utility | [updater](updater.md) |
 
+Looking for flags and usage for a specific command? See the
+[📖 Command reference](/commands/) — the same pages linked from every
+`asc <command> --help`.
+
 Community files: [🛡️ SECURITY.md](https://github.com/AdminServiceCloud/asc-daemon/blob/main/SECURITY.md) — security policy and private vulnerability reports; [🤝 CODE_OF_CONDUCT.md](https://github.com/AdminServiceCloud/asc-daemon/blob/main/CODE_OF_CONDUCT.md) — code of conduct (Contributor Covenant 2.1); [version.txt](https://github.com/AdminServiceCloud/asc-daemon/blob/main/version.txt) — current version (kept in sync with `Cargo.toml`); [CODEOWNERS](https://github.com/AdminServiceCloud/asc-daemon/blob/main/.github/CODEOWNERS) — automatic PR review by [@statebyte](https://github.com/statebyte).
 
 ## 🏗️ Architecture

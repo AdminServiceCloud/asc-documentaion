@@ -23,6 +23,10 @@ Open source CLI-утилита и демон на Rust, устанавливае
 | ⏰ Планировщик задач | [scheduler](scheduler.md) |
 | 🔄 Утилита обновлений asc-updater | [updater](updater.md) |
 
+Ищете флаги и синтаксис конкретной команды? Смотрите
+[📖 Справочник команд](/ru/commands/) — те же страницы, на которые ссылается
+каждая `asc <команда> --help`.
+
 Community-файлы: [🛡️ SECURITY.md](https://github.com/AdminServiceCloud/asc-daemon/blob/main/docs/russian/SECURITY.md) — политика безопасности и приватные репорты уязвимостей; [🤝 CODE_OF_CONDUCT.md](https://github.com/AdminServiceCloud/asc-daemon/blob/main/docs/russian/CODE_OF_CONDUCT.md) — кодекс поведения (Contributor Covenant 2.1); [version.txt](https://github.com/AdminServiceCloud/asc-daemon/blob/main/version.txt) — текущая версия (синхронизируется с `Cargo.toml`); [CODEOWNERS](https://github.com/AdminServiceCloud/asc-daemon/blob/main/.github/CODEOWNERS) — авто-ревью PR от [@statebyte](https://github.com/statebyte).
 
 ## 🏗️ Архитектура
