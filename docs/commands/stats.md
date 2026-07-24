@@ -4,11 +4,13 @@ Show CPU, memory, disk usage and I/O, and network I/O per app, like
 `docker stats --no-stream`. Shows your own apps; run under `sudo` to see
 everyone's, grouped by owner.
 
-NET I/O and DISK I/O are cumulative byte totals since the app started
-("rx / tx" and "read / write"), not a rate — same convention as `docker
-stats`'s own columns. Network I/O is only available for Docker apps, which
-have their own network namespace; systemd and process apps share the host's,
-so that column reads as a dash for them.
+NET/s and DISK/s are the current throughput ("rx/s / tx/s" and "read/s /
+write/s"), the delta of the same two samples the CPU% comes from. NET I/O
+and DISK I/O are cumulative byte totals since the app started ("rx / tx"
+and "read / write"), not a rate — same convention as `docker stats`'s own
+columns. Network figures are only available for Docker apps, which have
+their own network namespace; systemd and process apps share the host's, so
+those columns read as a dash for them.
 
 ## Usage
 
