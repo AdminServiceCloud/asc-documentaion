@@ -1,0 +1,46 @@
+# 🛠️ Taskfile — development and build commands for asc-documentaion
+# https://taskfile.dev · install: go install github.com/go-task/task/v3/cmd/task@latest
+version: '3'
+
+tasks:
+  default:
+    desc: 📋 List all commands
+    cmds:
+      - task --list
+
+  # ── 🧑‍💻 Development ──────────────────────────────────────────────
+
+  install:
+    desc: 📥 Install dependencies
+    cmds:
+      - pnpm install
+
+  dev:
+    desc: 🚀 Run the VitePress dev server
+    cmds:
+      - pnpm docs:dev
+
+  # ── ✅ Quality ────────────────────────────────────────────────────
+
+  build:
+    desc: 📦 Build the static site (also fails on dead links)
+    cmds:
+      - pnpm docs:build
+
+  check:
+    desc: ✅ Full pre-commit check (build)
+    cmds:
+      - task: build
+
+  preview:
+    desc: 👀 Preview the production build locally
+    deps: [build]
+    cmds:
+      - pnpm docs:preview
+
+  # ── 🧹 Maintenance ────────────────────────────────────────────────
+
+  clean:
+    desc: 🧹 Remove build output and VitePress cache
+    cmds:
+      - rm -rf docs/.vitepress/dist docs/.vitepress/cache
