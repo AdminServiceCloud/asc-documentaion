@@ -21,10 +21,7 @@ my-stack [1/2]
 └── worker        Worker  docker  stopped   1.2.0    -
 ```
 
-An app is grouped under a stack when it was installed from one (`asc install
-<stack>` or `asc install <stack>/<app>`); an app installed on its own has no
-stack and never appears here — see [`asc ls`](/commands/ls) for the full list
-of apps regardless of origin.
+An app is grouped under a stack when it was installed from one (`asc install <stack>` or `asc install <stack>/<app>`); an app installed on its own has no stack and never appears here — see [`asc ls`](/commands/ls) for the full list of apps regardless of origin.
 
 ## See also
 
