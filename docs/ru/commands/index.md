@@ -15,6 +15,7 @@
 | [📃 ls](/ru/commands/ls) | Список приложений или вид ports/disk/stats |
 | [🔌 ports](/ru/commands/ports) | Опубликованные порты по приложениям |
 | [💽 disk](/ru/commands/disk) | Использование диска по приложениям |
+| [🧱 stacks](/ru/commands/stacks) | Установленные стеки и их приложения |
 | [⬇️ install](/ru/commands/install) | Установка из реестра или git URL |
 | [🔗 attach](/ru/commands/attach) | Подключение к консоли приложения |
 | [⏫ upgrade](/ru/commands/upgrade) | Обновление приложения до новой версии |

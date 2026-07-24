@@ -14,6 +14,7 @@ guides and background (not just flags), see the [CLI overview](/cli/).
 | [📃 ls](/commands/ls) | List apps, or switch to the ports/disk/stats view |
 | [🔌 ports](/commands/ports) | Published ports per app |
 | [💽 disk](/commands/disk) | Disk usage per app |
+| [🧱 stacks](/commands/stacks) | Installed stacks and their member apps |
 | [⬇️ install](/commands/install) | Install from a registry or git URL |
 | [🔗 attach](/commands/attach) | Attach to an app's console |
 | [⏫ upgrade](/commands/upgrade) | Upgrade an app to a new version |
