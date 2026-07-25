@@ -7,6 +7,9 @@
 
 The public documentation site for the [AdminService.Cloud](https://adminservice.cloud) project: the [asc-daemon](https://github.com/AdminServiceCloud/asc-daemon) CLI and the platform built on top of it. Built with [VitePress](https://vitepress.dev), deployed to GitHub Pages. English and Russian content side by side (`docs/` and `docs/ru/`).
 
+- 🌐 Main site: [docs.adminservice.cloud](https://docs.adminservice.cloud)
+- 📖 GitHub Pages mirror: [adminservicecloud.github.io/asc-documentaion](https://adminservicecloud.github.io/asc-documentaion/)
+
 ## 🗂️ Structure
 
 | Path | Description |
