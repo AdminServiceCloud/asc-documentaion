@@ -8,6 +8,7 @@
 | Команда | Описание |
 |---|---|
 | [🚀 serve](/ru/commands/serve) | Запустить демон в foreground |
+| [🤖 mcp](/ru/commands/mcp) | Открыть локальный daemon как MCP-сервер |
 | [🧰 service](/ru/commands/service) | Управление systemd-сервисом |
 | [📋 status](/ru/commands/status) | Версия демона, состояние сервиса, сводка |
 | [📊 stats](/ru/commands/stats) | Потребление CPU/памяти/диска по приложениям |

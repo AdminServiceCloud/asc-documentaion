@@ -22,10 +22,18 @@ const cliSidebarEn = [
     ],
   },
   {
+    text: "AI Integration",
+    items: [
+      { text: "MCP", link: "/ai-integration/mcp" },
+      { text: "Skills", link: "/ai-integration/skills" },
+    ],
+  },
+  {
     text: "Command reference",
     items: [
       { text: "Overview", link: "/commands/" },
       { text: "serve", link: "/commands/serve" },
+      { text: "mcp", link: "/commands/mcp" },
       { text: "service", link: "/commands/service" },
       { text: "status", link: "/commands/status" },
       { text: "stats", link: "/commands/stats" },
@@ -69,10 +77,18 @@ const cliSidebarRu = [
     ],
   },
   {
+    text: "Интеграция с AI",
+    items: [
+      { text: "MCP", link: "/ru/ai-integration/mcp" },
+      { text: "Skills", link: "/ru/ai-integration/skills" },
+    ],
+  },
+  {
     text: "Справочник команд",
     items: [
       { text: "Обзор", link: "/ru/commands/" },
       { text: "serve", link: "/ru/commands/serve" },
+      { text: "mcp", link: "/ru/commands/mcp" },
       { text: "service", link: "/ru/commands/service" },
       { text: "status", link: "/ru/commands/status" },
       { text: "stats", link: "/ru/commands/stats" },
@@ -149,6 +165,7 @@ export default defineConfig({
         ],
         sidebar: {
           "/cli/": cliSidebarEn,
+          "/ai-integration/": cliSidebarEn,
           "/commands/": cliSidebarEn,
           "/platform/": [{ text: "Platform", items: [{ text: "Overview", link: "/platform/" }] }],
         },
@@ -173,6 +190,7 @@ export default defineConfig({
         ],
         sidebar: {
           "/ru/cli/": cliSidebarRu,
+          "/ru/ai-integration/": cliSidebarRu,
           "/ru/commands/": cliSidebarRu,
           "/ru/platform/": [
             { text: "Платформа", items: [{ text: "Обзор", link: "/ru/platform/" }] },

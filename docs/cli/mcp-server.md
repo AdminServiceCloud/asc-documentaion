@@ -2,34 +2,70 @@
 
 ## 📌 Description
 
-An MCP server (Model Context Protocol) built into the daemon — a set of tools through which an AI manages the server. Used by the platform's AI assistant ([🤖 ai-assistant](https://github.com/AdminServiceCloud/asc-platform/blob/main/docs/features/ai-assistant.md)) as well as by any MCP client (Claude Desktop, Claude Code) when working locally — a strong move for the open source audience.
+`asc mcp serve` is a local [Model Context Protocol](https://modelcontextprotocol.io/)
+server for AI clients. It uses standard input/output and forwards management
+operations to the running ASC daemon through its local Unix socket.
+
+The daemon derives access from the kernel's `SO_PEERCRED` peer UID. A normal
+user can only see and manage that user's applications; a root MCP process can
+manage every application. No MCP argument can select another UID or role.
 
 ## 🎯 Scenarios
 
-- The platform AI receives the daemon's tools through the nodeservice tunnel and executes the user's commands.
-- A developer connects the daemon to Claude Code: `claude mcp add asc -- asc mcp serve` — and manages their server from the IDE.
+- Connect Codex, Claude Code, or another stdio MCP client and manage apps you own.
+- Run the same command as root when an administrator intentionally needs all apps.
+- Read state and logs; install, upgrade, configure, back up, restore, or remove apps.
 
 ## 🏗️ Technical design
 
-### Tools (MVP)
+### Tools
 
-| Tool | Action | Danger |
+| Tool | Action | MCP hint |
 |---|---|---|
-| `system_info` | OS, resources, uptime | 🟢 |
-| `metrics_get` | System/application metrics | 🟢 |
-| `app_list` / `app_info` | Application list and details | 🟢 |
-| `logs_read` | Reading application logs | 🟢 |
-| `app_install` / `app_control` | Install, start/stop/restart | 🟡 |
-| `env_set` | Changing variables | 🟡 |
-| `backup_create` / `backup_restore` | Backups | 🟡/🔴 |
-| `app_remove` | Removing an application | 🔴 |
-| `exec_command` | An arbitrary shell command | 🔴 |
+| `system_info`, `metrics_get` | daemon and application metrics | read-only |
+| `app_list`, `app_info`, `logs_read`, `app_settings_get` | application data | read-only |
+| `app_install`, `app_upgrade`, `app_control`, `app_settings_update` | application management | mutating |
+| `backup_list`, `backup_create`, `backup_restore`, `backup_prune` | local backups | restore is destructive |
+| `app_remove`, `exec_command` | removal and host commands | destructive |
 
-- **Danger levels**: 🟢 execute immediately; 🟡 — by policy; 🔴 — always require user confirmation (elicitation / confirmation in the platform UI).
-- **Transports**: stdio (local MCP clients) and streamable HTTP (through the platform tunnel).
-- **Authorization**: the set of available tools is filtered by the permissions of the user the AI acts for ([🔐 access-control](https://github.com/AdminServiceCloud/asc-platform/blob/main/docs/features/access-control.md)).
-- **Audit**: every tool call goes to the daemon log and the platform audit.
+The daemon resolves and authorizes every app reference. A foreign and an
+unknown app return the same `not found` error. Destructive tools carry MCP
+annotations so the client can request confirmation.
+
+`exec_command` runs in the MCP process, not in the root daemon, so it inherits
+the actual OS UID of `asc mcp serve`. It uses `/bin/sh -lc`, defaults to 60
+seconds (maximum 300), and limits stdout and stderr to 1 MiB each.
+
+### Connect an MCP client
+
+Requirements: `asc` is on PATH, the daemon is running (`asc status`), and the
+client user can connect to the configured ASC Unix socket.
+
+For a Codex-compatible stdio configuration:
+
+```json
+{
+  "mcp_servers": {
+    "asc": { "command": "asc", "args": ["mcp", "serve"] }
+  }
+}
+```
+
+This normal configuration can manage only the current user's apps. To
+intentionally manage all apps, run the MCP client command through `sudo` with
+arguments `asc mcp serve`; configure non-interactive sudo according to the
+host security policy.
+
+For Claude Code:
+
+```bash
+claude mcp add asc -- asc mcp serve
+```
+
+If connection fails, check `asc status`, the daemon service, and the configured
+socket path. Use an absolute `asc` path if it is not on PATH. Do not grant root
+only to make an app visible: confirm the app was installed under the intended UID.
 
 ## 🔗 Related tasks
 
-DMN-013, AI-001, AI-002, AI-003 in [ROADMAP.md](https://github.com/AdminServiceCloud/asc-platform/blob/main/ROADMAP.md).
+DMN-013, AI-001, AI-002 and AI-003 in the [ASC roadmap](https://github.com/AdminServiceCloud/asc-platform/blob/main/ROADMAP.md).
