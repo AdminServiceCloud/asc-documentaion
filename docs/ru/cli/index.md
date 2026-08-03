@@ -10,6 +10,12 @@ Open source CLI-утилита и демон на Rust, устанавливае
 
 ## ✨ Возможности
 
+## 🚀 Начните здесь
+
+- [Начало работы](/ru/cli/getting-started) — установка ASC на сервер.
+- [Поддержка ASC в репозитории](/ru/cli/repository-support) — `asc.yaml`, `asc.settings.yaml` и стеки.
+- [Создание своего registry](/ru/cli/custom-registry) — публикация пакетов через GitHub или HTTPS-сайт.
+
 | Модуль | Док |
 |---|---|
 | 📡 API: gRPC (ConnectRPC) + REST, токены | [api](api.md) |

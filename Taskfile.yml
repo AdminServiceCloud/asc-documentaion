@@ -1,4 +1,4 @@
-# 🛠️ Taskfile — development and build commands for asc-documentaion
+# 🛠️ Taskfile — development and build commands for asc-documentation
 # https://taskfile.dev · install: go install github.com/go-task/task/v3/cmd/task@latest
 version: '3'
 

@@ -21,6 +21,12 @@ hero:
 ---
 
 <div class="mx-auto max-w-5xl px-6 pb-24 pt-4">
+  <h2 class="mb-6 text-xl font-semibold text-foreground">Начните с ASC</h2>
+  <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <ArticleCard icon="🚀" title="Начало работы" details="Установите ASC на сервер и проверьте сервис." link="/ru/cli/getting-started" />
+    <ArticleCard icon="📦" title="Поддержка ASC" details="Подготовьте одно приложение или стек." link="/ru/cli/repository-support" />
+    <ArticleCard icon="🗂️" title="Свой registry" details="Публикуйте пакеты в GitHub или на HTTPS-сайте." link="/ru/cli/custom-registry" />
+  </div>
   <h2 class="mb-6 text-xl font-semibold text-foreground">CLI (asc-daemon)</h2>
   <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
     <ArticleCard icon="📡" title="API: gRPC + REST" details="ConnectRPC, REST-транспорт, токены и аутентификация через unix-сокет." link="/ru/cli/api" />

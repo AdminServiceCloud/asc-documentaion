@@ -14,10 +14,28 @@
   --vp-c-brand-3: oklch(0.985 0 0);
 }
 
+.dark .VPButton.brand {
+  --vp-button-brand-text: oklch(0.145 0 0);
+  --vp-button-brand-bg: oklch(0.922 0 0);
+  --vp-button-brand-hover-text: oklch(0.145 0 0);
+  --vp-button-brand-hover-bg: oklch(0.82 0 0);
+}
+
 /* The shadcn-vue ModeToggle (injected into `nav-bar-content-after`) replaces
    VitePress's built-in appearance switch — hide the original to avoid two
    controls for the same setting. */
 .VPSwitchAppearance {
   display: none !important;
+}
+
+.article-card,
+.article-card:hover,
+.article-card h3,
+.article-card p {
+  text-decoration: none !important;
+}
+
+.article-card:hover h3 {
+  color: var(--vp-c-brand-1);
 }
 

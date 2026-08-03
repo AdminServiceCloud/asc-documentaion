@@ -10,6 +10,12 @@ Open source CLI utility and daemon written in Rust, installed on the user's serv
 
 ## ✨ Features
 
+## 🚀 Start here
+
+- [Getting Started](/cli/getting-started) — install ASC on a server.
+- [Add ASC support to a repository](/cli/repository-support) — create `asc.yaml`, `asc.settings.yaml` and stacks.
+- [Create a custom registry](/cli/custom-registry) — publish packages from GitHub or an HTTPS site.
+
 | Module | Doc |
 |---|---|
 | 📡 API: gRPC (ConnectRPC) + REST, tokens | [api](api.md) |

@@ -1,14 +1,13 @@
 # 📚 AdminService.Cloud Docs
 
-[![CI](https://github.com/AdminServiceCloud/asc-documentaion/actions/workflows/ci.yml/badge.svg)](https://github.com/AdminServiceCloud/asc-documentaion/actions/workflows/ci.yml)
-[![Deploy](https://github.com/AdminServiceCloud/asc-documentaion/actions/workflows/deploy.yml/badge.svg)](https://github.com/AdminServiceCloud/asc-documentaion/actions/workflows/deploy.yml)
+[![CI](https://github.com/AdminServiceCloud/asc-documentation/actions/workflows/ci.yml/badge.svg)](https://github.com/AdminServiceCloud/asc-documentation/actions/workflows/ci.yml)
+[![Deploy](https://github.com/AdminServiceCloud/asc-documentation/actions/workflows/deploy.yml/badge.svg)](https://github.com/AdminServiceCloud/asc-documentation/actions/workflows/deploy.yml)
 
 ## 📌 About
 
 The public documentation site for the [AdminService.Cloud](https://adminservice.cloud) project: the [asc-daemon](https://github.com/AdminServiceCloud/asc-daemon) CLI and the platform built on top of it. Built with [VitePress](https://vitepress.dev), deployed to GitHub Pages. English and Russian content side by side (`docs/` and `docs/ru/`).
 
 - 🌐 Main site: [docs.adminservice.cloud](https://docs.adminservice.cloud)
-- 📖 GitHub Pages mirror: [adminservicecloud.github.io/asc-documentaion](https://adminservicecloud.github.io/asc-documentaion/)
 
 ## 🗂️ Structure
 

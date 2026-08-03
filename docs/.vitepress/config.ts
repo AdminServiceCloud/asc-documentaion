@@ -6,6 +6,9 @@ const cliSidebarEn = [
     text: "CLI (asc-daemon)",
     items: [
       { text: "Overview", link: "/cli/" },
+      { text: "Getting Started", link: "/cli/getting-started" },
+      { text: "Add ASC support to a repository", link: "/cli/repository-support" },
+      { text: "Create a custom registry", link: "/cli/custom-registry" },
       { text: "API: gRPC + REST", link: "/cli/api" },
       { text: "Application management", link: "/cli/app-management" },
       { text: "Package manager", link: "/cli/package-manager" },
@@ -50,6 +53,9 @@ const cliSidebarRu = [
     text: "CLI (asc-daemon)",
     items: [
       { text: "Обзор", link: "/ru/cli/" },
+      { text: "РќР°С‡Р°Р»Рѕ СЂР°Р±РѕС‚С‹", link: "/ru/cli/getting-started" },
+      { text: "РџРѕРґРґРµСЂР¶РєР° ASC РІ СЂРµРїРѕР·РёС‚РѕСЂРёРё", link: "/ru/cli/repository-support" },
+      { text: "РЎРѕР·РґР°РЅРёРµ СЃРІРѕРµРіРѕ registry", link: "/ru/cli/custom-registry" },
       { text: "API: gRPC + REST", link: "/ru/cli/api" },
       { text: "Управление приложениями", link: "/ru/cli/app-management" },
       { text: "Пакетный менеджер", link: "/ru/cli/package-manager" },
@@ -92,12 +98,12 @@ const cliSidebarRu = [
 export default defineConfig({
   title: "AdminService.Cloud Docs",
   description: "Documentation for the asc-daemon CLI and the AdminService.Cloud platform",
-  base: "/asc-documentaion/",
+  base: "/",
   lang: "en-US",
   appearance: true,
   cleanUrls: true,
 
-  head: [["link", { rel: "icon", href: "/asc-documentaion/screenshots/preview.png" }]],
+  head: [["link", { rel: "icon", href: "/screenshots/preview.png" }]],
 
   vite: {
     resolve: {
@@ -147,7 +153,7 @@ export default defineConfig({
           "/platform/": [{ text: "Platform", items: [{ text: "Overview", link: "/platform/" }] }],
         },
         editLink: {
-          pattern: "https://github.com/AdminServiceCloud/asc-documentaion/edit/main/docs/:path",
+          pattern: "https://github.com/AdminServiceCloud/asc-documentation/edit/main/docs/:path",
           text: "Edit this page on GitHub",
         },
         footer: {
@@ -173,7 +179,7 @@ export default defineConfig({
           ],
         },
         editLink: {
-          pattern: "https://github.com/AdminServiceCloud/asc-documentaion/edit/main/docs/:path",
+          pattern: "https://github.com/AdminServiceCloud/asc-documentation/edit/main/docs/:path",
           text: "Редактировать на GitHub",
         },
         footer: {
